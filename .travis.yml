@@ -1,0 +1,14 @@
+language: ruby
+sudo: false
+cache: bundler
+bundler_args: "--without development"
+script: bundle exec rake lint
+gemfile:
+- Gemfile
+rvm:
+- 2.0.0
+- 2.1.0
+- 2.2.0
+notifications:
+  slack:
+    secure: JXfIzNcZx7X96mot1Ov+webtg7TbAU5WGuAggtN37EQOmAz24eF6iztwAG4xXm0J4CUpEncWazP6F7VCLvPLw9R3Gkyfqq+JkkEY/5xW0vMTUBRjPqj02c5XnVs5j0mJ6wacipv1eOtIDLjWj76L3jMIoUYCzzHEwBuokLzy/CCfGzs4k8CFc9cjnfWck/brvbEifSprht9fZKei6V6CqvrPCDJhC2uQZ4iW9lPwIZbAuOkbDTCLCRL0fUgBm1WffnMM+4cgxyKG1ltEi8qhOvxWcARWAefQMtRNg1s9lNkH5zJl91fxrTfd/I7pQwMLHlFnwRVz6kozq3SEYt5lcUdoftSztozk9hMi/PQQq9GpvKbRRLTTN7JQzunQYDHKAN0/kKHsy6cbprGZrWon2F0cHhdQZE+uM123oV0O4oO5MdZ3kZDw9aEr7w+/SRQLrNkytGI6XKVKC0eRMkUK7Z1Ksrv/mldWxHNF5nPzjB6nmFz81dHMV67wi1RwnEp64BBYnB5DbS8kKdrevy5XJgDY9gW3LPvxITx3Ap/h8sfRjc9mjLVNlDqMygZ/hkgyHQhRKOtLJtt9GzhJxnX8G1vlhTEFPeEBQwxkQxCa6vyVj23edRFnSNPKcsDGrWmekCvbTnJEo2EYXT7tJPNXxEkF4+QU5CckO3PTXYYcLFo=
