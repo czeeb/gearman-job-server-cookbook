@@ -14,21 +14,22 @@ The following platforms and versions are tested and supported using [test-kitche
 * Ubuntu 12.04, 14.04
 
 Other versions that should work fine but are not testing in [test-kitchen].
+
 * Amazon Linux 2015-03
 * RHEL >= 6.6
 
 ## Attributes
 
-Please see (gearman documentation)[http://gearman.org/manual/job_server/#options] for what each of these options do.
+Please see [gearman documentation](http://gearman.org/manual/job_server/#options) for what each of these options do.
 
-* `default['gearman-job-server']['backlog']` - Number of backlog connections for listen.
-* `default['gearman-job-server']['file-descriptors']` - Number of file descriptors to allow for the process.  Default is max allowed for users.
-* `default['gearman-job-server']['job-retries']` - Number of attempts to run the job before the job server removes it.  Default is no limit.
-* `default['gearman-job-server']['log-file']` - Log file to write errors and information to.
-* `default['gearman-job-server']['listen']` - Address the server should listen on. Default is INADDR_ANY.
-* `default['gearman-job-server']['port']` - Port the server should listen on.  Default is 4730.
-* `default['gearman-job-server']['threads']` - Number of I/O threads to use.  Default = 0
-* `default['gearman-job-server']['user']` - Switch to given user after startup
+* `default['gearman-job-server']['parameters']['backlog']` - Number of backlog connections for listen.
+* `default['gearman-job-server']['parameters']['file-descriptors']` - Number of file descriptors to allow for the process.  Default is max allowed for users.
+* `default['gearman-job-server']['parameters']['job-retries']` - Number of attempts to run the job before the job server removes it.  Default is no limit.
+* `default['gearman-job-server']['parameters']['log-file']` - Log file to write errors and information to.
+* `default['gearman-job-server']['parameters']['listen']` - Address the server should listen on. Default is INADDR_ANY.
+* `default['gearman-job-server']['parameters']['port']` - Port the server should listen on.  Default is 4730.
+* `default['gearman-job-server']['parameters']['threads']` - Number of I/O threads to use.  Default = 0
+* `default['gearman-job-server']['parameters']['user']` - Switch to given user after startup
 
 * `default['gearman-job-server']['queue-type']` - Persistent queue type to use. Valid options are libdrizzle, libmemcached, libsqlite3, libpq, mysql
 

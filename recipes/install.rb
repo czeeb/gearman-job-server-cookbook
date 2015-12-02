@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+# TODO: Add an option to install a specific version from source.
+
 include_recipe 'apt' if node['platform_family'] == 'debian'
 
 case node['platform_family']
