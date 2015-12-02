@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: gearman-job-server
-# Recipe:: default
+# Recipe:: install
 #
 # Copyright (c) 2015 Chris Zeeb <chris.zeeb@gmail.com>
 #
@@ -17,6 +17,13 @@
 # limitations under the License.
 #
 
-include_recipe 'gearman-job-server::install'
-include_recipe 'gearman-job-server::config'
-include_recipe 'gearman-job-server::service'
+include_recipe 'apt'
+
+case node['platform_family']
+when 'debian'
+  package 'gearman-job-server'
+  package 'gearman-tools'
+when 'rhel'
+  package 'epel-release'
+  package 'gearmand'
+end

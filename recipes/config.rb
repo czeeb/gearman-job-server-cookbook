@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: gearman-job-server
-# Recipe:: default
+# Recipe:: config
 #
 # Copyright (c) 2015 Chris Zeeb <chris.zeeb@gmail.com>
 #
@@ -16,7 +16,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-include_recipe 'gearman-job-server::install'
-include_recipe 'gearman-job-server::config'
-include_recipe 'gearman-job-server::service'

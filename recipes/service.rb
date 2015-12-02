@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: gearman-job-server
-# Recipe:: default
+# Recipe:: service
 #
 # Copyright (c) 2015 Chris Zeeb <chris.zeeb@gmail.com>
 #
@@ -17,6 +17,13 @@
 # limitations under the License.
 #
 
-include_recipe 'gearman-job-server::install'
-include_recipe 'gearman-job-server::config'
-include_recipe 'gearman-job-server::service'
+service 'gearman-job-server' do
+  action [:enable, :start]
+  supports :restart => true
+  case node['platform_family']
+  when 'debian'
+    service_name 'gearman-job-server'
+  when 'rhel'
+    service_name 'gearmand'
+  end
+end

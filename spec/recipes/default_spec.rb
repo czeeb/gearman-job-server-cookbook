@@ -3,33 +3,13 @@ require_relative '../spec_helper.rb'
 describe 'gearman-job-server::default' do
   let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
-  it 'includes the apt cookbook' do
-    expect(chef_run).to include_recipe('apt')
-  end
-
-  it 'enables and runs gearman job server' do
-    expect(chef_run).to enable_service('gearman-job-server')
-  end
-
-  context 'Debian' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe)
-    end
-
-    it 'installs gearman job server' do
-      expect(chef_run).to install_package('gearman-job-server')
-      expect(chef_run).to install_package('gearman-tools')
-    end
-  end
-
-  context 'EPEL' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '6.5').converge(described_recipe)
-    end
-
-    it 'installs gearman job server' do
-      expect(chef_run).to install_package('epel-release')
-      expect(chef_run).to install_package('gearmand')
+  %w(
+    gearman-job-server::install
+    gearman-job-server::config
+    gearman-job-server::service
+  ).each do |recipe|
+    it "includes recipe #{recipe}" do
+      expect(chef_run).to include_recipe(recipe)
     end
   end
 end
