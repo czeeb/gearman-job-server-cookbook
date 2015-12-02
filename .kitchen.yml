@@ -18,4 +18,3 @@ suites:
   - name: default
     run_list:
       - recipe[gearman-job-server::default]
-
