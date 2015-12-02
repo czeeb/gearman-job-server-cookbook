@@ -8,6 +8,7 @@ issues_url       'https://github.com/czeeb/gearman-job-server-cookbook/issues' i
 source_url       'https://github.com/czeeb/gearman-job-server-cookbook' if respond_to?(:source_url)
 version          '0.0.1'
 
+supports 'amazon'
 supports 'centos', '>= 6.6'
 supports 'debian', '>= 7.8'
 supports 'redhat', '>= 6.6'
