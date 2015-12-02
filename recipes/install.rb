@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe 'apt'
+include_recipe 'apt' if node['platform_family'] == 'debian'
 
 case node['platform_family']
 when 'debian'
