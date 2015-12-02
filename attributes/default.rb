@@ -1,11 +1,11 @@
-default['gearman-job-server']['backlog'] = nil
-default['gearman-job-server']['file-descriptors'] = nil
-default['gearman-job-server']['job-retries'] = nil
-default['gearman-job-server']['log-file'] = nil
-default['gearman-job-server']['listen'] = nil
-default['gearman-job-server']['port'] = nil
-default['gearman-job-server']['threads'] = nil
-default['gearman-job-server']['user'] = nil
+default['gearman-job-server']['parameters']['backlog'] = nil
+default['gearman-job-server']['parameters']['file-descriptors'] = nil
+default['gearman-job-server']['parameters']['job-retries'] = nil
+default['gearman-job-server']['parameters']['log-file'] = nil
+default['gearman-job-server']['parameters']['listen'] = nil
+default['gearman-job-server']['parameters']['port'] = nil
+default['gearman-job-server']['parameters']['threads'] = nil
+default['gearman-job-server']['parameters']['user'] = nil
 
 default['gearman-job-server']['queue-type'] = nil
 

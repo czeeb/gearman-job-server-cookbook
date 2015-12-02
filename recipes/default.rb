@@ -18,5 +18,5 @@
 #
 
 include_recipe 'gearman-job-server::install'
-include_recipe 'gearman-job-server::config'
 include_recipe 'gearman-job-server::service'
+include_recipe 'gearman-job-server::config'

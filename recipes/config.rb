@@ -16,3 +16,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+include_recipe 'gearman-job-server::service'
+
+params = node.default['gearman-job-server']['parameters'].reject { |k, v| v.nil? }.map { |k, v| "--#{k}=#{v}" }.join(' ')
+
+if node['gearman-job-server']['queue-type']
+  q = node['gearman-job-server']['queue-type']
+  params = params + ' ' + node.default['gearman-job-server']['parameters'] = node['gearman-job-server'][node['gearman-job-server']['queue-type']].map { |k, v| "--#{q}-#{k}=#{v}" }.join(' ')
+end
+
+# TODO Add toggle for if gearman should be restarted when config changes.
+template 'gearman-config' do
+  source 'gearman-config.erb'
+  notifies :restart, 'service[gearman-job-server]', :delayed
+  case node['platform_family']
+  when 'debian'
+    path '/etc/default/gearman-job-server'
+    variables({
+      :param_word => 'PARAMS',
+      :params     => params
+    })
+  when 'rhel'
+    path '/etc/sysconfig/gearmand'
+    variables({
+      :param_word => 'OPTIONS',
+      :params     => params
+    })
+  end
+end

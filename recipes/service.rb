@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+# TODO Fix bug where if daemon cannot start the config file cannot be fixed.
 service 'gearman-job-server' do
   action [:enable, :start]
   supports :restart => true
