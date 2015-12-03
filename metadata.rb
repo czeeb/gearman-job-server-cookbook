@@ -15,4 +15,3 @@ supports 'redhat', '>= 6.6'
 supports 'ubuntu', '>= 12.04'
 
 depends 'apt', '~> 2.7'
-depends 'yum', '~> 3.2'
