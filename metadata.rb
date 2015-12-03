@@ -14,5 +14,5 @@ supports 'debian', '>= 7.8'
 supports 'redhat', '>= 6.6'
 supports 'ubuntu', '>= 12.04'
 
-depends 'apt', '~> 2.7.0'
-depends 'yum', '~> 3.2.0'
+depends 'apt', '~> 2.7'
+depends 'yum', '~> 3.2'
