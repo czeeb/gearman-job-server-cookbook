@@ -6,7 +6,7 @@ description      'Installs/Configures gearman job server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 issues_url       'https://github.com/czeeb/gearman-job-server-cookbook/issues' if respond_to?(:issues_url)
 source_url       'https://github.com/czeeb/gearman-job-server-cookbook' if respond_to?(:source_url)
-version          '0.0.1'
+version          '1.0.0'
 
 supports 'amazon'
 supports 'centos', '>= 6.6'

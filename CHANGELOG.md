@@ -2,6 +2,6 @@
 
 This file is used to list changes made in each version of the gearman-job-server cookbook.
 
-## 0.0.1 / Unreleased
+## 1.0.0 / Unreleased
 
 * Initial release of gearman-job-server-cookbook

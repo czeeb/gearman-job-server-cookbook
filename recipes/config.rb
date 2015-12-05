@@ -22,9 +22,9 @@ include_recipe 'gearman-job-server::service'
 # Map parameters and discard nil k/v pairs
 params = node['gearman-job-server']['parameters'].reject { |_k, v| v.nil? }.map { |k, v| "--#{k}=#{v}" }.join(' ')
 
-# If a persisitant queue-type is set, add the queue types parameters in and discard nil k/v pairs.
-if node['gearman-job-server']['queue-type']
-  q = node['gearman-job-server']['queue-type']
+# If a persistent queue-type is set, add the queue types parameters in and discard nil k/v pairs.
+if node['gearman-job-server']['parameters']['queue-type']
+  q = node['gearman-job-server']['parameters']['queue-type']
   params = params + ' ' + node['gearman-job-server'][q].reject { |_k, v| v.nil? }.map { |k, v| "--#{q}-#{k}=#{v}" }.join(' ')
 end
 

@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  customize:
+    cpus: 3
 
 provisioner:
   name: chef_zero
@@ -12,10 +14,78 @@ platforms:
   - name: debian-8.1
   - name: ubuntu-12.04
   - name: ubuntu-14.04
-  - name: ubuntu-15.04
 
 suites:
   - name: default
     run_list:
       - recipe[kitchen-test-helper]
       - recipe[gearman-job-server::default]
+
+  - name: libmemcached
+    run_list:
+      - recipe[kitchen-test-helper]
+      - recipe[memcached-helper]
+      - recipe[gearman-job-server::default]
+    excludes:
+      - centos-6.6
+      - centos-7.1
+      - ubuntu-12.04
+    attributes:
+      gearman-job-server:
+        parameters:
+          queue-type: 'libmemcached'
+        libmemcached:
+          servers: '127.0.0.1'
+
+  - name: libpg
+    run_list:
+      - recipe[kitchen-test-helper]
+      - recipe[libpg-helper]
+      - recipe[gearman-job-server::default]
+    excludes:
+      - debian-7.8
+    attributes:
+      gearman-job-server:
+        parameters:
+          queue-type: 'libpg'
+
+  - name: libsqlite3
+    run_list:
+      - recipe[kitchen-test-helper]
+      - recipe[libsqlite3-helper]
+      - recipe[gearman-job-server::default]
+    attributes:
+      gearman-job-server:
+        parameters:
+          queue-type: 'libsqlite3'
+        libsqlite3:
+          db: '/tmp/test.sqlite'
+
+  - name: libtokyocabinet
+    run_list:
+      - recipe[kitchen-test-helper]
+      - recipe[libtokyocabinet-helper]
+      - recipe[gearman-job-server::default]
+    excludes:
+      - debian-7.8
+      - debian-8.1
+      - ubuntu-14.04
+    attributes:
+      gearman-job-server:
+        parameters:
+          queue-type: 'libtokyocabinet'
+
+  - name: mysql
+    run_list:
+      - recipe[kitchen-test-helper]
+      - recipe[mysql-helper]
+      - recipe[gearman-job-server::default]
+    excludes:
+      - debian-7.8
+      - ubuntu-12.04
+    attributes:
+      gearman-job-server:
+        parameters:
+          queue-type: 'mysql'
+        libsqlite3:
+          db: '/tmp/test.sqlite'

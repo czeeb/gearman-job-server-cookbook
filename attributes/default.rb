@@ -7,7 +7,7 @@ default['gearman-job-server']['parameters']['port'] = 4730
 default['gearman-job-server']['parameters']['threads'] = nil
 default['gearman-job-server']['parameters']['user'] = nil
 
-default['gearman-job-server']['queue-type'] = nil
+default['gearman-job-server']['parameters']['queue-type'] = nil
 
 default['gearman-job-server']['libdrizzle']['host'] = nil
 default['gearman-job-server']['libdrizzle']['port'] = nil

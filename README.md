@@ -18,6 +18,19 @@ Other versions that should work fine but are not testing in [test-kitchen].
 * Amazon Linux 2015-03
 * RHEL >= 6.6
 
+## Tested Queue Types and Distros
+
+An X indicates that the queue type for the distro is supported.  Different packages support different queue types because they had different compile time options and libraries used.
+
+|              | Drizzle | Memcached | MySQL | Postgres | SQLite3 | Tokyo Cabinet |
+|--------------|:-------:|:---------:|:-----:|:--------:|:-------:|:-------------:|
+| CentOS 6.6   |         |           | X     | X        | X       | X             |
+| CentOS 7.1   |         |           | X     | X        | X       | X             |
+| Debian 7.8   |         | X         |       |          | X       |               |
+| Debian 8.1   |         | X         | X     | X        | X       |               |
+| Ubuntu 12.04 |         |           |       | X        | X       | X             |
+| Ubuntu 14.04 |         | X         | X     | X        | X       |               |
+
 ## Attributes
 
 Please see [gearman documentation](http://gearman.org/manual/job_server/#options) for what each of these options do.
