@@ -14,4 +14,5 @@ supports 'debian', '>= 7.8'
 supports 'redhat', '>= 6.6'
 supports 'ubuntu', '>= 12.04'
 
+# 2.7 is required for Debian 8 support
 depends 'apt', '~> 2.7'
