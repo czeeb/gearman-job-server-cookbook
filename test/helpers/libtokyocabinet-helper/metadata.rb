@@ -1,4 +1,4 @@
-name             'tokyocabinet-helper'
+name             'libtokyocabinet-helper'
 maintainer       'Chris Zeeb'
 maintainer_email 'chris.zeeb@gmail.com'
 license          'Apache 2.0'

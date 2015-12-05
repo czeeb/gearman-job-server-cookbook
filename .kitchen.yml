@@ -74,6 +74,8 @@ suites:
       gearman-job-server:
         parameters:
           queue-type: 'libtokyocabinet'
+        libtokyocabinet:
+          file: '/tmp/gearman.tch'
 
   - name: mysql
     run_list:

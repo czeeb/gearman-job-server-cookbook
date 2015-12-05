@@ -1,11 +1,13 @@
 # Why not arrays instead of hashes?
 # https://coderanger.net/arrays-and-chef/
 
-default['packages']['centos']['7.1'] = {
+# TODO: Make this less specific
+
+default['packages']['centos']['6.6'] = {
   'tokyocabinet' => true
 }
 
-default['packages']['centos']['7.1'] = {
+default['packages']['centos']['7.1.1503'] = {
   'tokyocabinet' => true
 }
 

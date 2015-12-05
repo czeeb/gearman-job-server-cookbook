@@ -26,6 +26,9 @@ default['gearman-job-server']['libsqlite3']['table'] = nil
 default['gearman-job-server']['libpq']['conninfo'] = nil
 default['gearman-job-server']['libpq']['table'] = nil
 
+default['gearman-job-server']['libtokyocabinet']['file'] = nil
+default['gearman-job-server']['libtokyocabinet']['optimize'] = nil
+
 default['gearman-job-server']['mysql']['host'] = nil
 default['gearman-job-server']['mysql']['port'] = nil
 default['gearman-job-server']['mysql']['user'] = nil
