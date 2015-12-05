@@ -31,7 +31,6 @@ end
 # TODO: Add toggle for if gearman should be restarted when config changes.
 template 'gearman-config' do
   source 'gearman-config.erb'
-  notifies :restart, 'service[gearman-job-server]', :delayed
   case node['platform_family']
   when 'debian'
     path '/etc/default/gearman-job-server'

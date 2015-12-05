@@ -17,4 +17,5 @@ platforms:
 suites:
   - name: default
     run_list:
+      - recipe[kitchen-test-helper]
       - recipe[gearman-job-server::default]

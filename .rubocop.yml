@@ -14,3 +14,6 @@ AllCops:
 
 Metrics/LineLength:
   Max: 200
+
+Style/GlobalVars:
+  AllowedVariables: ['$node']

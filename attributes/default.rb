@@ -2,8 +2,8 @@ default['gearman-job-server']['parameters']['backlog'] = nil
 default['gearman-job-server']['parameters']['file-descriptors'] = nil
 default['gearman-job-server']['parameters']['job-retries'] = nil
 default['gearman-job-server']['parameters']['log-file'] = nil
-default['gearman-job-server']['parameters']['listen'] = nil
-default['gearman-job-server']['parameters']['port'] = nil
+default['gearman-job-server']['parameters']['listen'] = 'localhost'
+default['gearman-job-server']['parameters']['port'] = 4730
 default['gearman-job-server']['parameters']['threads'] = nil
 default['gearman-job-server']['parameters']['user'] = nil
 

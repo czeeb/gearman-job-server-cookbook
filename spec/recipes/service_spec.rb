@@ -5,6 +5,5 @@ describe 'gearman-job-server::service' do
 
   it 'enables and runs gearman job server' do
     expect(chef_run).to enable_service('gearman-job-server')
-    expect(chef_run).to start_service('gearman-job-server')
   end
 end

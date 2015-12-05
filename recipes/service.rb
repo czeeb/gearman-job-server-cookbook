@@ -17,9 +17,8 @@
 # limitations under the License.
 #
 
-# TODO: Fix bug where if daemon cannot start the config file cannot be fixed.
 service 'gearman-job-server' do
-  action [:enable, :start]
+  action [:enable]
   supports :restart => true
   case node['platform_family']
   when 'debian'
@@ -27,4 +26,5 @@ service 'gearman-job-server' do
   when 'rhel'
     service_name 'gearmand'
   end
+  subscribes :restart, 'template[gearman-config]', :delayed
 end
