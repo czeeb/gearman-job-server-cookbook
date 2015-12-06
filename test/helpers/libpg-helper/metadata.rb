@@ -6,5 +6,6 @@ description      'Installs postgres'
 long_description ''
 version          '1.0.0'
 
-
-
+depends 'database', '~> 4.0'
+depends 'gearman-job-server', '~> 1.0'
+depends 'postgresql', '~> 3.4'

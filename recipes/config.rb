@@ -17,15 +17,15 @@
 # limitations under the License.
 #
 
-include_recipe 'gearman-job-server::service'
-
 # Map parameters and discard nil k/v pairs
 params = node['gearman-job-server']['parameters'].reject { |_k, v| v.nil? }.map { |k, v| "--#{k}=#{v}" }.join(' ')
 
 # If a persistent queue-type is set, add the queue types parameters in and discard nil k/v pairs.
+# TODO: Create connection string for libpg for user rather than them having to build it
 if node['gearman-job-server']['parameters']['queue-type']
-  q = node['gearman-job-server']['parameters']['queue-type']
-  params = params + ' ' + node['gearman-job-server'][q].reject { |_k, v| v.nil? }.map { |k, v| "--#{q}-#{k}=#{v}" }.join(' ')
+  queuetype = node['gearman-job-server']['parameters']['queue-type']
+  queuetype = 'libpq' if queuetype == 'Postgres'
+  params = params + ' ' + node['gearman-job-server'][queuetype].reject { |_k, v| v.nil? }.map { |k, v| "--#{queuetype}-#{k}=#{v}" }.join(' ')
 end
 
 # TODO: Add toggle for if gearman should be restarted when config changes.

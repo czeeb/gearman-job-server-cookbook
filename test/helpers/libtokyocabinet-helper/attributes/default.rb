@@ -30,3 +30,6 @@ default['packages']['ubuntu']['14.04'] = {
   'libtokyocabinet9' => true,
   'tokyocabinet-bin' => true
 }
+
+default['gearman-job-server']['parameters']['queue-type'] = 'libtokyocabinet'
+default['gearman-job-server']['libtokyocabinet']['file'] = '/tmp/gearman.tch'

@@ -18,13 +18,14 @@
 #
 
 service 'gearman-job-server' do
-  action [:enable]
-  supports :restart => true
+  action [:enable, :start]
+  supports :restart => true, :start => true, :stop => true
   case node['platform_family']
   when 'debian'
     service_name 'gearman-job-server'
   when 'rhel'
     service_name 'gearmand'
   end
-  subscribes :restart, 'template[gearman-config]', :delayed
+  subscribes :stop, 'template[gearman-config]', :delayed
+  subscribes :start, 'template[gearman-config]', :delayed
 end

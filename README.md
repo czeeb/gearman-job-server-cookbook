@@ -94,6 +94,10 @@ Just include `gearman-job-server` in your node's `run_list`:
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github to the development branch
 
+## Helpful Stuff
+
+* [Shared Serverspec Tests](https://gist.github.com/pburkholder/a9cdde0b33be8d5e3c08) - Explains why the serverspec tests are set up the way the are.
+
 ## License and Authors
 Authors: Chris Zeeb <chris.zeeb@gmail.com> and [Contributors]
 

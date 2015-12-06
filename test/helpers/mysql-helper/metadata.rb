@@ -6,6 +6,7 @@ description      'Installs mysql'
 long_description ''
 version          '1.0.0'
 
-depends 'mysql', '~> 6.1.2'
-
-
+depends 'database', '~> 4.0'
+depends 'gearman-job-server', '~> 1.0'
+depends 'mysql', '~> 6.1'
+depends 'mysql2_chef_gem', '~> 1.0'

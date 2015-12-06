@@ -6,5 +6,7 @@ description      'Installs tokyocabinet'
 long_description ''
 version          '1.0.0'
 
+depends 'gearman-job-server', '~> 1.0'
+
 
 
