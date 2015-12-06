@@ -4,7 +4,7 @@ maintainer_email 'chris.zeeb@gmail.com'
 license          'Apache 2.0'
 description      'Installs postgres'
 long_description ''
-version          '1.0.0'
+version          '1.0.5'
 
 depends 'database', '~> 4.0'
 depends 'gearman-job-server', '~> 1.0'

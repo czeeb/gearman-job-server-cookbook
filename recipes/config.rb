@@ -25,7 +25,13 @@ params = node['gearman-job-server']['parameters'].reject { |_k, v| v.nil? }.map 
 if node['gearman-job-server']['parameters']['queue-type']
   queuetype = node['gearman-job-server']['parameters']['queue-type']
   queuetype = 'libpq' if queuetype == 'Postgres'
-  params = params + ' ' + node['gearman-job-server'][queuetype].reject { |_k, v| v.nil? }.map { |k, v| "--#{queuetype}-#{k}=#{v}" }.join(' ')
+
+  # We want to ignore the libpq conninfo parameter for Ubuntu 12.04. It needs to go in the init script instead
+  if node['platform'] == 'ubuntu' && node['platform_version'] == '12.04' && queuetype == 'libpq'
+    params = params + ' ' + node['gearman-job-server'][queuetype].reject { |k, v| v.nil? || k == 'conninfo' }.map { |k, v| "--#{queuetype}-#{k}=#{v}" }.join(' ')
+  else
+    params = params + ' ' + node['gearman-job-server'][queuetype].reject { |_k, v| v.nil? }.map { |k, v| "--#{queuetype}-#{k}=#{v}" }.join(' ')
+  end
 end
 
 # TODO: Add toggle for if gearman should be restarted when config changes.
@@ -43,6 +49,16 @@ template 'gearman-config' do
     variables(
       :param_word => 'OPTIONS',
       :params     => params
+    )
+  end
+end
+
+if node['platform'] == 'ubuntu' && node['platform_family'] == '12.04'
+  template 'gearmand-init' do
+    path '/etc/init.d/gearman-job-server'
+    source 'gearmand.init.erb'
+    variables(
+      :libpq_conninfo => node['gearman-job-server']['libpq']['conninfo']
     )
   end
 end
