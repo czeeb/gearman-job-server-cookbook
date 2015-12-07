@@ -18,6 +18,10 @@ suites:
     run_list:
       - recipe[kitchen-test-helper]
       - recipe[gearman-job-server::default]
+    attributes:
+      gearman-job-server:
+        parameters:
+          port: 4731
 
   - name: libmemcached
     run_list:

@@ -34,7 +34,7 @@ if node['gearman-job-server']['parameters']['queue-type']
   end
 end
 
-# TODO: Add toggle for if gearman should be restarted when config changes.
+# TODO: Add toggle for if gearman should be restarted when config changes?
 template 'gearman-config' do
   source 'gearman-config.erb'
   case node['platform_family']
@@ -53,9 +53,20 @@ template 'gearman-config' do
   end
 end
 
-if node['platform'] == 'ubuntu' && node['platform_family'] == '12.04'
+# TODO: Clean this up?  It's starting to look like a mess
+if node['platform'] == 'ubuntu' || (node['platform'] == 'debian' && node['platform_version'].to_f > 8.0)
   template 'gearmand-init' do
-    path '/etc/init.d/gearman-job-server'
+    case node['platform']
+    when 'ubuntu'
+      case node['platform_version']
+      when '12.04'
+        path '/etc/init.d/gearman-job-server'
+      when '14.04'
+        path '/etc/init/gearman-job-server.conf'
+      end
+    when 'debian'
+      path '/lib/systemd/system/gearman-job-server.service'
+    end
     source 'gearmand.init.erb'
     variables(
       :libpq_conninfo => node['gearman-job-server']['libpq']['conninfo']

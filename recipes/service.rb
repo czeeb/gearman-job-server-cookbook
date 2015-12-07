@@ -17,6 +17,15 @@
 # limitations under the License.
 #
 
+# TODO: Investigate using the systemd chef cookbook instead
+if node['platform'] == 'debian' && node['platform_version'].to_f > 8.0
+  execute 'systemd-daemon-reload' do
+    command 'systemctl daemon-reload'
+    action :run
+    subscribes :create, 'template[gearman-init]', :immediately
+  end
+end
+
 service 'gearman-job-server' do
   action [:enable, :start]
   supports :restart => true, :start => true, :stop => true

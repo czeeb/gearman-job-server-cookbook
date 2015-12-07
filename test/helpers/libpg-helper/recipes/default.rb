@@ -25,7 +25,7 @@ when 'rhel'
   end
 when 'debian'
   if node['platform'] == 'ubuntu' && node['platform_version'].to_f <= 12.04
-    node.default['gearman-job-server']['libpq']['conninfo'] = '\'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand\''
+    node.default['gearman-job-server']['libpq']['conninfo'] = 'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand'
   else
     node.default['gearman-job-server']['libpq']['conninfo'] = 'postgresql://postgres:iloverandompasswordsbutthiswilldo@127.0.0.1:5432/gearmand'
   end

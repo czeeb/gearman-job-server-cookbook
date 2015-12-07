@@ -1,0 +1,12 @@
+[Unit]
+Description=Gearmand distributed job system
+After=syslog.target network.target
+
+[Service]
+EnvironmentFile=/etc/default/gearman-job-server
+User=gearman
+Type=forking
+ExecStart=/usr/sbin/gearmand -d $PARAMS
+
+[Install]
+WantedBy=multi-user.target
