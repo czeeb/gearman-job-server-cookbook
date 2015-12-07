@@ -18,12 +18,11 @@
 #
 
 # TODO: Investigate using the systemd chef cookbook instead
-if node['platform'] == 'debian' && node['platform_version'].to_f > 8.0
-  execute 'systemd-daemon-reload' do
-    command 'systemctl daemon-reload'
-    action :run
-    subscribes :create, 'template[gearman-init]', :immediately
-  end
+execute 'systemd-daemon-reload' do
+  only_if { node['platform'] == 'debian' && node['platform_version'].to_f > 8.0 }
+  command 'systemctl daemon-reload'
+  action :run
+  subscribes :run, 'template[gearman-init]', :delayed
 end
 
 service 'gearman-job-server' do
@@ -37,4 +36,8 @@ service 'gearman-job-server' do
   end
   subscribes :stop, 'template[gearman-config]', :delayed
   subscribes :start, 'template[gearman-config]', :delayed
+  if node['platform'] == 'debian' && node['platform_version'].to_f > 8.0
+    subscribes :stop, 'template[gearmand-init]', :delayed
+    subscribes :start, 'template[gearmand-init]', :delayed
+  end
 end

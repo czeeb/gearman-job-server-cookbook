@@ -54,22 +54,21 @@ template 'gearman-config' do
 end
 
 # TODO: Clean this up?  It's starting to look like a mess
-if node['platform'] == 'ubuntu' || (node['platform'] == 'debian' && node['platform_version'].to_f > 8.0)
-  template 'gearmand-init' do
-    case node['platform']
-    when 'ubuntu'
-      case node['platform_version']
-      when '12.04'
-        path '/etc/init.d/gearman-job-server'
-      when '14.04'
-        path '/etc/init/gearman-job-server.conf'
-      end
-    when 'debian'
-      path '/lib/systemd/system/gearman-job-server.service'
+template 'gearmand-init' do
+  only_if { node['platform'] == 'ubuntu' || (node['platform'] == 'debian' && node['platform_version'].to_f > 8.0) }
+  case node['platform']
+  when 'ubuntu'
+    case node['platform_version']
+    when '12.04'
+      path '/etc/init.d/gearman-job-server'
+    when '14.04'
+      path '/etc/init/gearman-job-server.conf'
     end
-    source 'gearmand.init.erb'
-    variables(
-      :libpq_conninfo => node['gearman-job-server']['libpq']['conninfo']
-    )
+  when 'debian'
+    path '/lib/systemd/system/gearman-job-server.service'
   end
+  source 'gearmand.init.erb'
+  variables(
+    :libpq_conninfo => node['gearman-job-server']['libpq']['conninfo']
+  )
 end

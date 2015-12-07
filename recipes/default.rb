@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+# TODO: Consistency pass.  gearman, gearmand, gearman-job-server.  All used for resources or reference.
 include_recipe 'gearman-job-server::install'
 include_recipe 'gearman-job-server::config'
 include_recipe 'gearman-job-server::service'
