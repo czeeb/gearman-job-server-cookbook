@@ -4,4 +4,4 @@ node['packages'][node['platform']][node['platform_version']].each do |pkg, flag|
   package pkg if flag
 end
 
-include_recipe 'gearman-job-server'
+include_recipe 'gearman'

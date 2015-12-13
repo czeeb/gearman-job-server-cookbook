@@ -1,6 +1,6 @@
 require_relative '../spec_helper.rb'
 
-describe 'gearman-job-server::install' do
+describe 'gearman::install' do
   let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   context 'Debian' do

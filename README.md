@@ -35,40 +35,40 @@ An X indicates that the queue type for the distro is supported.  Different packa
 
 Please see [gearman documentation](http://gearman.org/manual/job_server/#options) for what each of these options do.
 
-* `default['gearman-job-server']['parameters']['backlog']` - Number of backlog connections for listen.
-* `default['gearman-job-server']['parameters']['file-descriptors']` - Number of file descriptors to allow for the process.  Default is max allowed for users.
-* `default['gearman-job-server']['parameters']['job-retries']` - Number of attempts to run the job before the job server removes it.  Default is no limit.
-* `default['gearman-job-server']['parameters']['log-file']` - Log file to write errors and information to.
-* `default['gearman-job-server']['parameters']['listen']` - Address the server should listen on. Default is INADDR_ANY.
-* `default['gearman-job-server']['parameters']['port']` - Port the server should listen on.  Default is 4730.
-* `default['gearman-job-server']['parameters']['threads']` - Number of I/O threads to use.  Default = 0
-* `default['gearman-job-server']['parameters']['user']` - Switch to given user after startup
+* `default['gearman']['parameters']['backlog']` - Number of backlog connections for listen.
+* `default['gearman']['parameters']['file-descriptors']` - Number of file descriptors to allow for the process.  Default is max allowed for users.
+* `default['gearman']['parameters']['job-retries']` - Number of attempts to run the job before the job server removes it.  Default is no limit.
+* `default['gearman']['parameters']['log-file']` - Log file to write errors and information to.
+* `default['gearman']['parameters']['listen']` - Address the server should listen on. Default is INADDR_ANY.
+* `default['gearman']['parameters']['port']` - Port the server should listen on.  Default is 4730.
+* `default['gearman']['parameters']['threads']` - Number of I/O threads to use.  Default = 0
+* `default['gearman']['parameters']['user']` - Switch to given user after startup
 
-* `default['gearman-job-server']['queue-type']` - Persistent queue type to use. Valid options are libdrizzle, libmemcached, libsqlite3, libpq, mysql
+* `default['gearman']['queue-type']` - Persistent queue type to use. Valid options are libdrizzle, libmemcached, libsqlite3, libpq, mysql
 
-* `default['gearman-job-server']['libdrizzle']['host']` - Host of server
-* `default['gearman-job-server']['libdrizzle']['port']` - Port of server
-* `default['gearman-job-server']['libdrizzle']['uds']` - Unix domain socket for server
-* `default['gearman-job-server']['libdrizzle']['user']` - User name for authentication
-* `default['gearman-job-server']['libdrizzle']['password']` - Password for authentication
-* `default['gearman-job-server']['libdrizzle']['db']` - Database to use
-* `default['gearman-job-server']['libdrizzle']['table']` - Table to use
-* `default['gearman-job-server']['libdrizzle']['mysql']` - Set to true to use MySQL protocol
+* `default['gearman']['libdrizzle']['host']` - Host of server
+* `default['gearman']['libdrizzle']['port']` - Port of server
+* `default['gearman']['libdrizzle']['uds']` - Unix domain socket for server
+* `default['gearman']['libdrizzle']['user']` - User name for authentication
+* `default['gearman']['libdrizzle']['password']` - Password for authentication
+* `default['gearman']['libdrizzle']['db']` - Database to use
+* `default['gearman']['libdrizzle']['table']` - Table to use
+* `default['gearman']['libdrizzle']['mysql']` - Set to true to use MySQL protocol
 
-* `default['gearman-job-server']['libmemcached']['servers']` - List of memcached servers to use.
+* `default['gearman']['libmemcached']['servers']` - List of memcached servers to use.
 
-* `default['gearman-job-server']['libsqlite3']['db']` - Database file to use
-* `default['gearman-job-server']['libsqlite3']['table']` - Table to use
+* `default['gearman']['libsqlite3']['db']` - Database file to use
+* `default['gearman']['libsqlite3']['table']` - Table to use
 
-* `default['gearman-job-server']['libpq']['conninfo']` - PostgreSQL connection information string
-* `default['gearman-job-server']['libpq']['table']` - Table to use
+* `default['gearman']['libpq']['conninfo']` - PostgreSQL connection information string
+* `default['gearman']['libpq']['table']` - Table to use
 
-* `default['gearman-job-server']['mysql']['host']` - Host of server
-* `default['gearman-job-server']['mysql']['port']` - Port of server
-* `default['gearman-job-server']['mysql']['user']` - User for authentication
-* `default['gearman-job-server']['mysql']['password']` - Password for authentication
-* `default['gearman-job-server']['mysql']['db']` - Database to use
-* `default['gearman-job-server']['mysql']['table']` - Table to use
+* `default['gearman']['mysql']['host']` - Host of server
+* `default['gearman']['mysql']['port']` - Port of server
+* `default['gearman']['mysql']['user']` - User for authentication
+* `default['gearman']['mysql']['password']` - Password for authentication
+* `default['gearman']['mysql']['db']` - Database to use
+* `default['gearman']['mysql']['table']` - Table to use
 
 ## Usage
 #### gearman-job-server::default

@@ -7,4 +7,4 @@ long_description ''
 version          '1.0.0'
 
 depends 'sqlite', '~> 1.1.2'
-depends 'gearman-job-server', '~> 1.0'
+depends 'gearman', '~> 1.0'

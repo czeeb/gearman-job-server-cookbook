@@ -2,9 +2,9 @@
 default['mysql-helper']['mysql']['name'] = 'default'
 
 # gearmand options
-default['gearman-job-server']['parameters']['queue-type'] = 'mysql'
+default['gearman']['parameters']['queue-type'] = 'mysql'
 
-default['gearman-job-server']['mysql']['host'] = '127.0.0.1'
-default['gearman-job-server']['mysql']['user'] = 'root'
-default['gearman-job-server']['mysql']['password'] = 'root'
-default['gearman-job-server']['mysql']['db'] = 'gearmand'
+default['gearman']['mysql']['host'] = '127.0.0.1'
+default['gearman']['mysql']['user'] = 'root'
+default['gearman']['mysql']['password'] = 'root'
+default['gearman']['mysql']['db'] = 'gearmand'

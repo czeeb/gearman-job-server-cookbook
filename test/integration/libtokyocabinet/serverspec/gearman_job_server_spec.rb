@@ -6,7 +6,7 @@ context 'libtokyocabinet queue-type' do
     its(:args) { should match(/--queue-type=libtokyocabinet/) }
   end
 
-  describe file("#{$node['gearman-job-server']['libtokyocabinet']['file']}") do
+  describe file("#{$node['gearman']['libtokyocabinet']['file']}") do
     it { should exist }
     it { should be_file }
   end
