@@ -71,16 +71,16 @@ Please see [gearman documentation](http://gearman.org/manual/job_server/#options
 * `default['gearman']['mysql']['table']` - Table to use
 
 ## Usage
-#### gearman-job-server::default
+#### gearman::default
 
 e.g.
-Just include `gearman-job-server` in your node's `run_list`:
+Just include `gearman` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[gearman-job-server]"
+    "recipe[gearman]"
   ]
 }
 ```
