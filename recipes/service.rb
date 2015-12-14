@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe 'gearman::config'
+
 # TODO: Investigate using the systemd chef cookbook instead
 execute 'systemd-daemon-reload' do
   only_if { node['platform'] == 'debian' && node['platform_version'].to_f > 8.0 }
