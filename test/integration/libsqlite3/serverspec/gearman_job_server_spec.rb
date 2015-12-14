@@ -6,7 +6,7 @@ context 'libsqlite3 queue-type' do
     its(:args) { should match(/--queue-type=libsqlite3/) }
   end
 
-  describe file("#{$node['gearman-job-server']['libsqlite3']['db']}") do
+  describe file("#{$node['gearman']['libsqlite3']['db']}") do
     it { should exist }
     it { should be_file }
   end

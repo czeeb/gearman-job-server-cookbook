@@ -2,4 +2,4 @@ source 'https://supermarket.getchef.com'
 
 metadata
 
-cookbook 'gearman-job-server', '~> 1.0', path: '../../'
+cookbook 'gearman', '~> 1.0', path: '../../'

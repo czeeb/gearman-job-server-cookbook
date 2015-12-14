@@ -1,6 +1,6 @@
 require_relative '../spec_helper.rb'
 
-describe 'gearman-job-server::config' do
+describe 'gearman::config' do
   context 'Debian' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe)

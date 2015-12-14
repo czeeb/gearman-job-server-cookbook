@@ -12,7 +12,7 @@ end
 # https://github.com/chef-cookbooks/database#resourcesproviders
 mysql2_chef_gem 'default'
 
-mysql_database node['gearman-job-server']['mysql']['db'] do
+mysql_database node['gearman']['mysql']['db'] do
   connection(
     :host     => '127.0.0.1',
     :socket   => "/var/run/mysql-#{node['mysql-helper']['mysql']['name']}/mysqld.sock",
@@ -22,4 +22,4 @@ mysql_database node['gearman-job-server']['mysql']['db'] do
   action :create
 end
 
-include_recipe 'gearman-job-server'
+include_recipe 'gearman'

@@ -1,4 +1,4 @@
-name             'gearman-job-server'
+name             'gearman'
 maintainer       'Chris Zeeb'
 maintainer_email 'chris.zeeb@gmail.com'
 license          'Apache 2.0'

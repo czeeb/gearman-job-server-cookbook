@@ -19,16 +19,16 @@ end
 case node['platform_family']
 when 'rhel'
   if node['platform_version'].to_f < 7.0
-    node.default['gearman-job-server']['libpq']['conninfo'] = '\'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand\''
+    node.default['gearman']['libpq']['conninfo'] = '\'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand\''
   else
-    node.default['gearman-job-server']['libpq']['conninfo'] = 'postgresql://postgres:iloverandompasswordsbutthiswilldo@127.0.0.1:5432/gearmand'
+    node.default['gearman']['libpq']['conninfo'] = 'postgresql://postgres:iloverandompasswordsbutthiswilldo@127.0.0.1:5432/gearmand'
   end
 when 'debian'
   if node['platform'] == 'ubuntu' && node['platform_version'].to_f <= 12.04
-    node.default['gearman-job-server']['libpq']['conninfo'] = 'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand'
+    node.default['gearman']['libpq']['conninfo'] = 'user=postgres password=iloverandompasswordsbutthiswilldo hostaddr=127.0.0.1 port=5432 dbname=gearmand'
   else
-    node.default['gearman-job-server']['libpq']['conninfo'] = 'postgresql://postgres:iloverandompasswordsbutthiswilldo@127.0.0.1:5432/gearmand'
+    node.default['gearman']['libpq']['conninfo'] = 'postgresql://postgres:iloverandompasswordsbutthiswilldo@127.0.0.1:5432/gearmand'
   end
 end
 
-include_recipe 'gearman-job-server'
+include_recipe 'gearman'

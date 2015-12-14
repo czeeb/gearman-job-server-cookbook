@@ -1,37 +1,37 @@
-default['gearman-job-server']['parameters']['backlog'] = nil
-default['gearman-job-server']['parameters']['file-descriptors'] = nil
-default['gearman-job-server']['parameters']['job-retries'] = nil
-default['gearman-job-server']['parameters']['log-file'] = nil
-default['gearman-job-server']['parameters']['listen'] = 'localhost'
-default['gearman-job-server']['parameters']['port'] = 4730
-default['gearman-job-server']['parameters']['threads'] = nil
-default['gearman-job-server']['parameters']['user'] = nil
+default['gearman']['parameters']['backlog'] = nil
+default['gearman']['parameters']['file-descriptors'] = nil
+default['gearman']['parameters']['job-retries'] = nil
+default['gearman']['parameters']['log-file'] = nil
+default['gearman']['parameters']['listen'] = 'localhost'
+default['gearman']['parameters']['port'] = 4730
+default['gearman']['parameters']['threads'] = nil
+default['gearman']['parameters']['user'] = nil
 
-default['gearman-job-server']['parameters']['queue-type'] = nil
+default['gearman']['parameters']['queue-type'] = nil
 
-default['gearman-job-server']['libdrizzle']['host'] = nil
-default['gearman-job-server']['libdrizzle']['port'] = nil
-default['gearman-job-server']['libdrizzle']['uds'] = nil
-default['gearman-job-server']['libdrizzle']['user'] = nil
-default['gearman-job-server']['libdrizzle']['password'] = nil
-default['gearman-job-server']['libdrizzle']['db'] = nil
-default['gearman-job-server']['libdrizzle']['table'] = nil
-default['gearman-job-server']['libdrizzle']['mysql'] = nil
+default['gearman']['libdrizzle']['host'] = nil
+default['gearman']['libdrizzle']['port'] = nil
+default['gearman']['libdrizzle']['uds'] = nil
+default['gearman']['libdrizzle']['user'] = nil
+default['gearman']['libdrizzle']['password'] = nil
+default['gearman']['libdrizzle']['db'] = nil
+default['gearman']['libdrizzle']['table'] = nil
+default['gearman']['libdrizzle']['mysql'] = nil
 
-default['gearman-job-server']['libmemcached']['servers'] = nil
+default['gearman']['libmemcached']['servers'] = nil
 
-default['gearman-job-server']['libsqlite3']['db'] = nil
-default['gearman-job-server']['libsqlite3']['table'] = nil
+default['gearman']['libsqlite3']['db'] = nil
+default['gearman']['libsqlite3']['table'] = nil
 
-default['gearman-job-server']['libpq']['conninfo'] = nil
-default['gearman-job-server']['libpq']['table'] = nil
+default['gearman']['libpq']['conninfo'] = nil
+default['gearman']['libpq']['table'] = nil
 
-default['gearman-job-server']['libtokyocabinet']['file'] = nil
-default['gearman-job-server']['libtokyocabinet']['optimize'] = nil
+default['gearman']['libtokyocabinet']['file'] = nil
+default['gearman']['libtokyocabinet']['optimize'] = nil
 
-default['gearman-job-server']['mysql']['host'] = nil
-default['gearman-job-server']['mysql']['port'] = nil
-default['gearman-job-server']['mysql']['user'] = nil
-default['gearman-job-server']['mysql']['password'] = nil
-default['gearman-job-server']['mysql']['db'] = nil
-default['gearman-job-server']['mysql']['table'] = nil
+default['gearman']['mysql']['host'] = nil
+default['gearman']['mysql']['port'] = nil
+default['gearman']['mysql']['user'] = nil
+default['gearman']['mysql']['password'] = nil
+default['gearman']['mysql']['db'] = nil
+default['gearman']['mysql']['table'] = nil

@@ -1,2 +1,2 @@
-default['gearman-job-server']['parameters']['queue-type'] = 'libsqlite3'
-default['gearman-job-server']['libsqlite3']['db'] = '/tmp/gearman.sqlite'
+default['gearman']['parameters']['queue-type'] = 'libsqlite3'
+default['gearman']['libsqlite3']['db'] = '/tmp/gearman.sqlite'

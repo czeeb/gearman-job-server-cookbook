@@ -17,7 +17,7 @@ suites:
   - name: default
     run_list:
       - recipe[kitchen-test-helper]
-      - recipe[gearman-job-server::default]
+      - recipe[gearman::default]
     attributes:
       gearman-job-server:
         parameters:
