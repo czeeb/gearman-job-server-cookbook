@@ -21,7 +21,7 @@
 params = node['gearman']['parameters'].reject { |_k, v| v.nil? }.map { |k, v| "--#{k}=#{v}" }.join(' ')
 
 # If a persistent queue-type is set, add the queue types parameters in and discard nil k/v pairs.
-# TODO: Create connection string for libpg for user rather than them having to build it
+# TODO: Create connection string for libpq for user rather than them having to build it
 if node['gearman']['parameters']['queue-type']
   queuetype = node['gearman']['parameters']['queue-type']
   queuetype = 'libpq' if queuetype == 'Postgres'

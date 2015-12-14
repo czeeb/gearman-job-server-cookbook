@@ -8,5 +8,5 @@ group :integration do
   cookbook 'libsqlite3-helper', '~> 1.0', path: 'test/helpers/libsqlite3-helper'
   cookbook 'mysql-helper', '~> 1.0', path: 'test/helpers/mysql-helper'
   cookbook 'libtokyocabinet-helper', '~> 1.0', path: 'test/helpers/libtokyocabinet-helper'
-  cookbook 'libpg-helper', '~> 1.0.6', path: 'test/helpers/libpg-helper'
+  cookbook 'libpq-helper', '~> 1.0.6', path: 'test/helpers/libpq-helper'
 end

@@ -32,10 +32,10 @@ suites:
       - centos-7.1
       - ubuntu-12.04
 
-  - name: libpg
+  - name: libpq
     run_list:
       - recipe[kitchen-test-helper]
-      - recipe[libpg-helper]
+      - recipe[libpq-helper]
     excludes:
       - debian-7.8
 

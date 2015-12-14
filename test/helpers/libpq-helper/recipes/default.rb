@@ -9,7 +9,7 @@ postgresql_database 'gearmand' do
   connection(
     :host      => '127.0.0.1',
     :username  => 'postgres',
-    :password  => node['libpg-helper']['pg']['password_plain']
+    :password  => node['libpq-helper']['pq']['password_plain']
   )
   action :create
 end
