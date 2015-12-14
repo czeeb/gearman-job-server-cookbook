@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: gearman-job-server
+# Cookbook Name:: gearman
 # Recipe:: install
 #
 # Copyright (c) 2015 Chris Zeeb <chris.zeeb@gmail.com>
