@@ -9,6 +9,7 @@ Rewrite of gearman cookbook
 ### Added
 
 * Support for Amazon, CentOS, and RedHat
+* `['gearman']['server']` options moved to `['gearman']['parameters']` 
 
 ### Changed
 
